@@ -1,8 +1,8 @@
 import streamlit as st
-import joblib as jb
+import joblib
 import pandas as pd
 import numpy as np
-model = jb.load("ben_house_price_model.pkl")
+model = joblib.load("ben_house_price_model.pkl")
 
 st.header("Bengaluru house price prediction")
 area_type = st.selectbox("Select your area",["super built-up  area","built-up  area","plot  area","carpet  area"])
@@ -29,6 +29,7 @@ if st.button("Predicted"):
     pred = model.predict(real)
     og = np.expm1(pred)
     st.success("According to this data your estimated price is " + str(og))
+
 
 
 
