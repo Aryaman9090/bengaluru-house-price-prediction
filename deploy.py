@@ -1,5 +1,5 @@
 import streamlit as st
-import joblib
+import joblib 
 import pandas as pd
 import numpy as np
 model = joblib.load("ben_house_price_model.pkl")
@@ -29,7 +29,6 @@ if st.button("Predicted"):
     pred = model.predict(real)
     og = np.expm1(pred)
     st.success("According to this data your estimated price is " + str(og))
-
 
 
 
